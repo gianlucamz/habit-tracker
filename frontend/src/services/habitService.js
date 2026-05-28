@@ -19,3 +19,18 @@ export async function deleteHabit(id) {
   const { data } = await api.delete(`/habits/${id}`);
   return data;
 }
+
+export async function toggleLog(habitId) {
+  const { data } = await api.post(`/logs/${habitId}/toggle`);
+  return data;
+}
+
+export async function getStreak(habitId) {
+  const { data } = await api.get(`/logs/${habitId}/streak`);
+  return data;
+}
+
+export async function getLogs(habitId) {
+  const { data } = await api.get(`/logs/${habitId}`);
+  return data;
+}
